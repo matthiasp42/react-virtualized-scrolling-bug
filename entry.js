@@ -7,9 +7,6 @@ import CellMeasurerCache from 'react-virtualized/dist/commonjs/CellMeasurer/Cell
 const app = document.getElementById('content');
 
 class Tile extends React.Component {
-    state = {
-        clicked: false
-    };
 
     onClick() {
         this.props.switchClickTo(!this.props.clicked)
@@ -19,7 +16,7 @@ class Tile extends React.Component {
         console.log("render")
         let color;
         if (this.props.clicked) {
-            color = this.props.value % 2 == 0 ? "green" : "lightgreen";
+            color = this.props.value % 2 == 0 ? "red" : "lightgreen";
         } else {
             color = this.props.value % 2 == 0 ? "lightgray" : "white";
         }
@@ -85,7 +82,6 @@ class VirtualList extends React.Component {
         this.setState({
             data: copy
         })
-
         this.cache.clearAll();
         this.virtualizedCheckpointList.recomputeRowHeights();
     }
