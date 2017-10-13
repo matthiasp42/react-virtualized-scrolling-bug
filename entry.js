@@ -13,7 +13,6 @@ class Tile extends React.Component {
     }
 
     render() {
-        console.log("render")
         let color;
         if (this.props.clicked) {
             color = this.props.value % 2 == 0 ? "red" : "lightgreen";
